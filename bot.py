@@ -63,10 +63,6 @@ def main_menu():
     )
     return markup
 
-@bot.message_handler(commands=['start', 'help'])
-def send_welcome(message):
-    bot.send_message(message.chat.id, "Привет! Используй /loot для поиска предметов.", reply_markup=main_menu())
-
 @bot.message_handler(func=lambda message: message.text == "Инвентарь")
 def show_inventory(message):
     # Рассчитываем текущий вес инвентаря
